@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/0dbb6b0e47.js" crossorigin="anonymous"></script>
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+    <title>Registration | Profile Portal </title>
+
+  <!-- CSS files -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+	  <link href="/assets/css/paper-bootstrap-wizard.css" rel="stylesheet" />
+
+  <!-- Fonts and Icons -->
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
+    <link href="/assets/css/themify-icons.css" rel="stylesheet">
+
+  <!-- Favicons -->
+    <link href="assets/img/favicon.svg" rel="icon">
+
+  </head>
+  <body>
+
+    <!--   Big container   -->
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+
+          <!--      Wizard container        -->
+          <div class="wizard-container">
+                 <!--     errors    -->
+            <div class="errors"> </div>
+            <div class="card wizard-card" data-color="blue" id="wizardProfile">
+              <form>
+                <div class="wizard-header text-center">
+                  <h3 class="wizard-title">Registration</h3>
+                </div>
+
+                <div class="wizard-navigation">
+                  <div class="progress-with-circle">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="3" style="width: 21%;"></div>
+                  </div>
+                  <ul>
+                    <li>
+                      <a href="#about" data-toggle="tab">
+                        <div class="icon-circle"> <i class="ti-user"></i> </div>
+                        About
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#account" data-toggle="tab">
+                        <div class="icon-circle"> <i class="ti-settings"></i> </div>
+                        Skills
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#address" data-toggle="tab">
+                        <div class="icon-circle"> <i class="ti-map"></i> </div>
+                        Intrest and PORs
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="tab-content">
+                  <div class="tab-pane" id="about">
+                    <div class="row"> <br> <br>
+                      <div class="col-sm-10 col-sm-offset-1">
+                        <div class="form-group">
+                          <label> Full Name <small>(required)</small></label>
+                          <input minlength="3" maxlength="30" name="name" type="text" class="form-control" placeholder="Name..." autocomplete="on" required pattern="[A-Za-z]">
+                        </div>
+                        <div class="form-group">
+                          <label> IITB Email <small>(required)</small></label>
+                          <input name="email" type="email" class="form-control" placeholder="rollno@iitb.ac.in" autocomplete="on" required>
+                        </div>
+                        <div class="form-group">
+                          <label> Whatsapp No. <small>(required)</small></label>
+                          <input minlength="10" maxlength="10" name="wano" type="number" class="form-control" placeholder="Whatsapp Number" autocomplete="on" required>
+                        </div>
+                      </div>
+                      <div class="col-sm-10 col-sm-offset-1">
+                        <div class="form-group">
+                          <label>Password <small>(required)</small></label>
+                          <input minlength="5" name="password" type="password" class="form-control" placeholder="Password..." required>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-sm-offset-1">
+                        <div class="form-group">
+                          <label> Hostel </label>
+                          <select name="hostel" class="form-control">
+                            <option value="" disabled selected> Select your hostel </option>
+                            <option value="H1"> H1 </option>
+                            <option value="H2"> H2 </option>
+                            <option value="H3"> H3 </option>
+                            <option value="H4"> H4 </option>
+                            <option value="H5"> H5 </option>
+                            <option value="H6"> H6 </option>
+                            <option value="H7"> H7 </option>
+                            <option value="H8"> H8 </option>
+                            <option value="H9"> H9 </option>
+                            <option value="H10"> H10 </option>
+                            <option value="H11"> H11 </option>
+                            <option value="H12"> H12 </option>
+                            <option value="H13"> H13 </option>
+                            <option value="H14"> H14 </option>
+                            <option value="H15"> H15 </option>
+                            <option value="H16"> H16 </option>
+                            <option value="H17"> H17 </option>
+                            <option value="H18"> H18 </option>
+                          </select>
+                        </div>
+                      </div>
+                        <div class="col-sm-6 col-sm-offset-1">
+                          <div class="form-group">
+                            <label> Year of Graduation </label>
+                            <select name="gradyr" class="form-control">
+                              <option value="" disabled selected> Select </option>
+                              <option value="2022"> 2022 </option>
+                              <option value="2023"> 2023 </option>
+                              <option value="2024"> 2024 </option>
+                              <option value="2025"> 2025 </option>
+                              <option value="2026"> 2026 </option>
+                              <option value="2027"> 2027 </option>
+                            </select>
+                          </div>
+                        </div>
+                   <!-- <div class="form-group">
+                          <input type="checkbox" checked data-toggle="toggle" data-on="UG" data-off="PG" name="">
+                        </div> -->
+                    </div>
+                  </div>
+                  <div class="tab-pane" id="account">
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <h5 class="info-text"> Please select top 3 skills you possess </h5>
+                      </div>
+                      <div class="col-sm-10 col-sm-offset-1">
+                        <div class="form-group">
+                          <input name="skill_1" class="form-control" list="datalistOptions1" placeholder="Type to search..." required>
+                          <datalist id="datalistOptions1">
+                            <% skills.forEach(function(object){ %>
+                             <option value="<%= object.skill %>"><%= object.skill %></option>
+                            <% }) %>
+                          </datalist>
+                        </div>
+                      </div>
+                      <div class="range-container">
+                      <div class="justify-content-center">
+                        <div class="col-sm-10 col-sm-offset-1">
+                          <div class="range">
+                            <input name="skill_1_value" type="range" min="1" max="3" steps="1" value="1">
+                          </div>
+                            <ul class="range-labels d-flex justify-content-between">
+                              <li class="Active Selected">Beginner</li>
+                              <li>Intermediate</li>
+                              <li>Advanced</li>
+                            </ul>
+                          <!-- </div> -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-sm-10 col-sm-offset-1">
+                        <div class="form-group">
+                          <input name="skill_2" class="form-control" list="datalistOptions2" placeholder="Type to search...">
+                          <datalist id="datalistOptions2">
+                            <% skills.forEach(function(object){ %>
+                             <option value="<%= object.skill %>"><%= object.skill %></option>
+                            <% }) %>
+                          </datalist>
+                        </div>
+                      </div>
+                      <div class="range-container">
+                        <div class="justify-content-center">
+                          <div class="col-sm-10 col-sm-offset-1">
+                            <div class="range">
+                              <input name="skill_2_value" type="range" min="1" max="3" steps="1" value="1">
+                            </div>
+                              <ul class="range-labels d-flex justify-content-between">
+                                <li class="Active Selected">Beginner</li>
+                                <li>Intermediate</li>
+                                <li>Advanced</li>
+                              </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-sm-10 col-sm-offset-1">
+                        <div class="form-group">
+                          <input name="skill_3" class="form-control" list="datalistOptions3" placeholder="Type to search...">
+                          <datalist id="datalistOptions3">
+                            <% skills.forEach(function(object){ %>
+                             <option value="<%= object.skill %>">
+                            <% }) %>
+                          </datalist>
+                        </div>
+                      </div>
+                      <div class="range-container">
+                        <div class="justify-content-center">
+                          <div class="col-sm-10 col-sm-offset-1">
+                            <div class="range">
+                              <input name="skill_3_value" type="range" min="1" max="3" steps="1" value="1">
+                            </div>
+                              <ul class="range-labels d-flex justify-content-between">
+                                <li class="Active Selected">Beginner</li>
+                                <li>Intermediate</li>
+                                <li>Advanced</li>
+                              </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane" id="address">
+                    <h5 class="info-text"> Please select all of your Interests and PORs </h5>
+                    <div class="row">
+                      <div class="col-sm-10 col-sm-offset-1">
+                        <div class="form-group">
+                          <label>Interests</label>
+                          <div class="">
+                            <select id="interests" multiple data-multi-select-plugin>
+                              <% interests.forEach(function(object){ %>
+                               <option value="<%= object.interest %>">
+                              <% }) %>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-10 col-sm-offset-1">
+                        <label>PORs</label>
+                      </div>
+                      <div class="col-sm-10 col-sm-offset-1">
+                        <div class="">
+                          <select id="pors" multiple data-multi-select-plugin>
+                            <% pors.forEach(function(object){ %>
+                             <option value="<%= object.por %>">
+                            <% }) %>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="wizard-footer">
+                  <div class="pull-right">
+                    <input type='button' class='btn btn-next btn-fill btn-info btn-wd' name='next' value='Next' />
+                    <input type='submit' class='btn btn-finish btn-fill btn-info btn-wd' name='finish' value='Finish' />
+                  </div>
+                  <div class="pull-left">
+                    <input type='button' class='btn btn-previous btn-default btn-wd' name='previous' value='Previous' />
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+              </form>
+            </div>
+          </div> <!-- wizard container -->
+        </div>
+      </div><!-- end row -->
+       <div class="row mt-3 mb-5">
+        <div class="col-12 text-center">
+          <p class="text-muted my-1">Have an account ?
+           <a href="login" class="text-primary ms-1"> <b>Log in</b> </a>
+          </p>
+        </div>
+      </div>
+    </div> <!--  big container -->
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by Cultural Council IITB .</p>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li><a class="facebook" href="https://www.facebook.com/IITBCult/"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="instagram" href="https://www.instagram.com/culturals.iitb/"><i class="fa fa-instagram"></i></a></li>
+              <li><a class="linkedin" href="https://www.linkedin.com/company/culturals-iit-bombay/"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/assets/js/jquery-2.2.4.min.js" type="text/javascript"></script>
+  	<script src="/assets/js/bootstrap.min.js" type="text/javascript"></script>
+  	<script src="/assets/js/jquery.bootstrap.wizard.js" type="text/javascript"></script>
+    <script src="/assets/js/paper-bootstrap-wizard.js" type="text/javascript"></script>
+    <script src="/js/multiselect.js" type="text/javascript"></script>
+    <script src="/js/range.js"></script>
+    <script src="/assets/js/jquery.validate.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+      const form = document.querySelector('form');
+      const displayError = document.querySelector('.errors');
+
+      form.addEventListener('submit',  async (e) => {
+        e.submitter.disabled = true;
+        displayError.textContent = '';
+        e.preventDefault();
+
+        const name = form.name.value;
+        const email = form.email.value;
+        const wano = form.wano.value;
+        const password = form.password.value;
+        const hostel = form.hostel.value;
+        const gradyr = form.gradyr.value;
+        const interests = [];
+        const pors = [];
+        const skill_1 = form.skill_1.value;
+        const skill_1_value = skill_1 && form.skill_1_value.value;
+        const skill_2 = form.skill_2.value;
+        const skill_2_value = skill_2 && form.skill_2_value.value;
+        const skill_3 = form.skill_3.value;
+        const skill_3_value = skill_3 && form.skill_3_value.value;
+
+
+        const selected = document.querySelectorAll("#interests option[selected]");
+        selected.forEach( interest => interests.push(interest.value));
+
+        const selected1 = document.querySelectorAll("#pors option[selected]");
+        selected1.forEach( por => pors.push(por.value));
+
+        try {
+          const res = await fetch('/signup', {
+            method: 'POST',
+            body: JSON.stringify({ name, email, wano, password, hostel, gradyr, interests, pors, skill_1, skill_1_value, skill_2,          skill_2_value, skill_3, skill_3_value }),
+            headers: {'Content-type': 'application/json'}
+          });
+
+          const data = await res.json();
+          if(data.errors){
+            e.submitter.disabled = false;
+            document.documentElement.scrollTop = 0;
+            displayError.style.display = "block";
+            displayError.textContent = data.errors.msg;
+          }
+          if (data.msg) {
+            e.submitter.disabled = true;
+            document.documentElement.scrollTop = 0;
+            displayError.style.display = "block";
+            displayError.style.color = '#270';
+            displayError.style.backgroundColor = '#DFF2BF';
+            displayError.textContent = data.msg;
+            setTimeout(() => location.assign('/login'), 7000);
+          }
+        }
+        catch (err) {
+           console.log(err);
+        }
+      });
+    </script>
+ </body>
+</html>

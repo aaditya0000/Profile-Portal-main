@@ -1,0 +1,457 @@
+<html lang="en">
+<head>
+ <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0dbb6b0e47.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/slick-free-lite/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="/slick-free-lite/css/main.css">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.svg" rel="icon">
+
+    <title>Edit | Profile Portal</title>
+</head>
+  <body>
+    <header id="home" class="hero-area">
+      <nav class="navbar navbar-expand-md fixed-top scrolling-navbar menu-bg">
+        <div class="container">
+          <a class="d-flex navbar-brand" href="#"><i class="fab fa-product-hunt fa-3x"></i><span class="align-self-center">Profile Portal</span></a>
+          <input class="menu-btn navbar-toggler" id="menu-btn" type="checkbox" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto w-100 justify-content-end">
+              <li class="nav-item">
+                <a class="nav-link page-scroll" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link page-scroll active" href="#">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link page-scroll" href="about">About</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- Header Section End -->
+
+    <div class="content container my-5" >
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">Edit Profile</h4>
+                  <p class="card-category">Complete your profile</p>
+                </div>
+                <div class="card-body">
+                  <form>
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Name</label>
+                          <input type="text" class="form-control" value="<%= user.name %>" disabled>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Email</label>
+                          <input type="text" name="email" class="form-control" value="<%= user.verifiedEmail %>" disabled>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">WA No.</label>
+                          <input type="text" name="wano" class="form-control" value="<%= user.wano %>" disabled>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group navbar-nav alert ">
+                          <h4><a class="font-weight-normal alert-link text-dark">Social Media links:</a></h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-2 my-auto">
+                        <div class="my-auto align-middle">
+                          <div class="form-group pb-0 align-bottom">
+                            <div class="align-bottom mb-0">Linked-In :</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-9">
+                        <div class="align-top">
+                          <div class="form-group align-top">
+                            <input type="text" class="form-control" name="linkedinLink" value="<%= user.linkedinLink %>">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row ">
+                      <div class="col-md-2  my-auto">
+                        <div class="form-group">
+                          <div class="align-bottom mb-0">Instagram :</div>
+                        </div>
+                      </div>
+                      <div class="col-md-9">
+                        <div class="form-group">
+                          <input type="text" class="form-control" name="instaLink" value="<%= user.instaLink %>">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row ">
+                      <div class="col-md-2 my-auto">
+                        <div class="form-group">
+                          <div class="align-bottom mb-0">Facebook :</div>
+                        </div>
+                      </div>
+                      <div class="col-md-9">
+                        <div class="form-group">
+                          <input type="text" class="form-control" name="fbLink" value="<%= user.fbLink %>">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row mt-4">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <div class=" align-middle">
+                            <div class=" align-bottom  ">
+                              <h4>Skills:</h4>
+                              <div class="row">
+                                <div class="col-md-12 col-lg-9">
+                                  <div class="form-group">
+                                    <input name="skill_1" class="form-control" list="datalistOptions1" placeholder="Type to search..." required>
+                                    <datalist id="datalistOptions1">
+                                      <% skills.forEach(function(object){ %>
+                                       <option value="<%= object.skill %>"><%= object.skill %></option>
+                                      <% }) %>
+                                    </datalist>
+                                  </div>
+                                </div>
+                                <div class="range-container col-md-12 col-lg-9">
+                                  <div class="justify-content-center">
+                                    <div class="">
+                                      <div class="range">
+                                        <input name="skill_1_value" type="range" min="1" max="3" steps="1" value="1">
+                                      </div>
+                                        <ul class="range-labels d-flex justify-content-between">
+                                          <li>Beginner</li>
+                                          <li>Intermediate</li>
+                                          <li>Advanced</li>
+                                        </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div><hr>
+                              <div class="row">
+                                <div class="col-md-12 col-lg-9">
+                                  <div class="form-group">
+                                    <input name="skill_2" class="form-control" list="datalistOptions2" placeholder="Type to search...">
+                                    <datalist id="datalistOptions2">
+                                      <% skills.forEach(function(object){ %>
+                                       <option value="<%= object.skill %>"><%= object.skill %></option>
+                                      <% }) %>
+                                    </datalist>
+                                  </div>
+                                </div>
+                                <div class="range-container col-md-12 col-lg-9">
+                                  <div class="justify-content-center">
+                                    <div class="">
+                                      <div class="range">
+                                        <input name="skill_2_value" type="range" min="1" max="3" steps="1" value="1">
+                                      </div>
+                                        <ul class="range-labels d-flex justify-content-between">
+                                          <li>Beginner</li>
+                                          <li>Intermediate</li>
+                                          <li>Advanced</li>
+                                        </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div><hr>
+                              <div class="row">
+                                <div class="col-md-12 col-lg-9">
+                                  <div class="form-group">
+                                    <input name="skill_3" class="form-control" list="datalistOptions3" placeholder="Type to search...">
+                                    <datalist id="datalistOptions3">
+                                      <% skills.forEach(function(object){ %>
+                                       <option value="<%= object.skill %>"><%= object.skill %></option>
+                                      <% }) %>
+                                    </datalist>
+                                  </div>
+                                </div>
+                                <div class="range-container col-md-12 col-lg-9">
+                                  <div class="justify-content-center">
+                                    <div class="">
+                                      <div class="range">
+                                        <input name="skill_3_value" type="range" min="1" max="3" steps="1" value="1">
+                                      </div>
+                                        <ul class="range-labels d-flex justify-content-between">
+                                          <li>Beginner</li>
+                                          <li>Intermediate</li>
+                                          <li>Advanced</li>
+                                        </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <div class=" align-middle">
+                            <div class=" align-bottom  ">
+                              <h4>Interests:</h4>
+                              <div class="col-lg-9"> <div class="color-1">
+                                <select id="interests" multiple data-multi-select-plugin>
+                                  <% interests.forEach(function(object){ %>
+                                   <option value="<%= object.interest %>"><%= object.interest %></option>
+                                  <% }) %>
+                                </select>
+                              </div> </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <div class=" align-middle">
+                            <div class=" align-bottom">
+                                <h4>PORs:</h4>
+                              <div class="col-lg-9"> <div class="color-1">
+                                <select id="pors" multiple data-multi-select-plugin>
+                                  <% pors.forEach(function(object){ %>
+                                   <option value="<%= object.por %>"><%= object.por %></option>
+                                  <% }) %>
+                                </select>
+                              </div> </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-success">Save</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4" id="profile">
+              <div class="single-profile">
+                <div class="profile-details">
+                  <div class="name-initials">
+                    <p><%= user.name.match(/\b(\w)/g).join('') %></p>
+                  </div>
+                  <div class="text-center">
+                    <h5 class="profile-title"><%= user.name %></h5>
+                      <% if(user.gradyr){ %> <span><b><small><%= user.gradyr %></small></b>,</span> <% } %>
+                      <% if(user.hostel){ %> <span><b><small><%= user.hostel %></small></b></span> <% } %>
+                  </div>
+                  <div class="profile-info">
+                    <p>Skills :
+                      <div class="tag">
+                        <% if(user.skill_1){ %><span class="tag-label"><%= user.skill_1 %></span><%
+                        let badge;
+                        switch(user.skill_1_value){
+                          case '1' : badge = 'BGN';
+                                     break;
+                          case '2' : badge = 'INT';
+                                     break;
+                          case '3' : badge = 'ADV';
+                                     break;
+                        }
+                        %><span class="badge bg-secondary"><%= badge %></span><% } %>
+                      </div>
+                      <div class="tag">
+                        <% if(user.skill_2){ %><span class="tag-label"><%= user.skill_2 %></span><%
+                        let badge;
+                        switch(user.skill_2_value){
+                          case '1' : badge = 'BGN';
+                                     break;
+                          case '2' : badge = 'INT';
+                                     break;
+                          case '3' : badge = 'ADV';
+                                     break;
+                        }
+                        %><span class="badge bg-secondary"><%= badge %></span><% } %>
+                      </div>
+                      <div class="tag">
+                        <% if(user.skill_3){ %><span class="tag-label"><%= user.skill_3 %></span><%
+                        let badge;
+                        switch(user.skill_3_value){
+                          case '1' : badge = 'BGN';
+                                     break;
+                          case '2' : badge = 'INT';
+                                     break;
+                          case '3' : badge = 'ADV';
+                                     break;
+                        }
+                        %><span class="badge bg-secondary"><%= badge %></span><% } %>
+                      </div></p>
+                    <p>Intrests : <% user.interests.forEach(interest => { %>
+                      <div class="tag">
+                        <span class="tag-label"><%= interest %></span>
+                      </div>
+                    <% }) %></p>
+                    <p>PoR's : <% user.pors.forEach(por => { %>
+                      <div class="tag">
+                        <span class="tag-label"><%= por %></span>
+                      </div>
+                    <% }) %></p>
+                    <p>Email : <%= user.email %></p>
+                    <p>WA No : <%= user.wano %></p>
+                  </div>
+
+                  <div class="social-media-links">
+                    <ul class="social-icons">
+                      <li><a class="facebook" href='<%= user.fbLink %>'><i class="fa fa-facebook"></i></a></li>
+                      <li><a class="instagram" href='<%= user.instaLink %>'><i class="fa fa-instagram"></i></a></li>
+                      <li><a class="linkedin" href='<%= user.linkedinLink %>'><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="site-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+              <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by Cultural Council IITB .</p>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <ul class="social-icons">
+                <li><a class="facebook" href="https://www.facebook.com/IITBCult/"><i class="fa fa-facebook"></i></a></li>
+                <li><a class="instagram" href="https://www.instagram.com/culturals.iitb/"><i class="fa fa-instagram"></i></a></li>
+                <li><a class="linkedin" href="https://www.linkedin.com/company/culturals-iit-bombay/"><i class="fa fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    <script src="/js/multiselect.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+      const form = document.querySelector('form');
+      form.skill_1.value = '<%= user.skill_1 %>';
+      form.skill_2.value = '<%= user.skill_2 %>';
+      form.skill_3.value = '<%= user.skill_3 %>';
+      form.skill_1_value.value = '<%= user.skill_1_value %>';
+      form.skill_2_value.value = '<%= user.skill_2_value %>';
+      form.skill_3_value.value = '<%= user.skill_3_value %>';
+
+      let currentInterests = '<%= user.interests %>';
+       currentInterests = currentInterests.split(',');
+      let currentPors = '<%= user.pors %>';
+       currentPors = currentPors.split(',');
+
+      const options = document.querySelectorAll("#interests option");
+      options.forEach(option => {
+        if (currentInterests.includes(option.value)) {
+          option.setAttribute("selected","");
+        }
+      });
+      const options1 = document.querySelectorAll("#pors option");
+      options1.forEach(option => {
+        if (currentPors.includes(option.value)) {
+          option.setAttribute("selected","");
+        }
+      });
+
+      // Skill input optimization
+      if (!form.skill_1.value) {
+        form.skill_1_value.parentElement.parentElement.hidden = true;
+      }
+      form.skill_1.addEventListener('change', () => {
+        if (form.skill_1.value) {
+          form.skill_1_value.parentElement.parentElement.hidden = false;
+        }
+        else {
+          form.skill_1_value.parentElement.parentElement.hidden = true;
+        }
+      });
+      if (!form.skill_2.value) {
+        form.skill_2_value.parentElement.parentElement.hidden = true;
+      }
+      form.skill_2.addEventListener('change', () => {
+        if (form.skill_2.value) {
+          form.skill_2_value.parentElement.parentElement.hidden = false;
+        }
+        else {
+          form.skill_2_value.parentElement.parentElement.hidden = true;
+        }
+      });
+      if (!form.skill_3.value) {
+        form.skill_3_value.parentElement.parentElement.hidden = true;
+      }
+      form.skill_3.addEventListener('change', () => {
+        if (form.skill_3.value) {
+          form.skill_3_value.parentElement.parentElement.hidden = false;
+        }
+        else {
+          form.skill_3_value.parentElement.parentElement.hidden = true;
+        }
+      });
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        console.log('put request sent.');
+        const email = form.email.value;
+        const linkedinLink = form.linkedinLink.value;
+        const instaLink = form.instaLink.value;
+        const fbLink = form.fbLink.value;
+        const interests = [];
+        const pors = [];
+        const skill_1 = form.skill_1.value;
+        const skill_1_value = skill_1 && form.skill_1_value.value;
+        const skill_2 = form.skill_2.value;
+        const skill_2_value = skill_2 && form.skill_2_value.value;
+        const skill_3 = form.skill_3.value;
+        const skill_3_value = skill_3 && form.skill_3_value.value;
+
+        const selected = document.querySelectorAll("#interests option[selected]");
+        selected.forEach( interest => interests.push(interest.value));
+
+        const selected1 = document.querySelectorAll("#pors option[selected]");
+        selected1.forEach( por => pors.push(por.value));
+
+        try {
+          const res = await fetch('/editprofile', {
+            method: 'PUT',
+            body: JSON.stringify({ email, linkedinLink, instaLink, fbLink, interests, pors, skill_1, skill_1_value, skill_2, skill_2_value, skill_3, skill_3_value }),
+            headers: {'Content-type': 'application/json'}
+          });
+
+          const data = await res.json();
+          if (data.msg) {
+            location.assign('/editprofile');
+          }
+        }
+        catch (err) {
+            console.log(err);
+        }
+      });
+    </script>
+    <script src="/js/range.js"></script>
+</body>
+</html>
