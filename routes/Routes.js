@@ -5,6 +5,7 @@ const User = require('../models/User');
 const Skill = require('../models/skills');
 const Interest = require('../models/interests');
 const Por = require('../models/pors');
+require('dotenv').config();
 
 const router = Router();
 
@@ -14,7 +15,7 @@ const requireAuth = (req, res, next) => {
 
   // check json web token exists & is verified
   if (token) {
-    jwt.verify(token, 'something random', (err, decodedToken) => {
+    jwt.verify(token, process.env.JWT_Secretkey, (err, decodedToken) => {
       if (err) {
         console.log(err.message);
         res.redirect('/login');
@@ -34,7 +35,7 @@ const checkUser = (req, res, next) => {
 
   // check json web token exists & is verified
   if (token) {
-    jwt.verify(token, 'something random', async (err, decodedToken) => {
+    jwt.verify(token, process.env.JWT_Secretkey, async (err, decodedToken) => {
       if (err) {
         res.locals.user = null;
         next();
